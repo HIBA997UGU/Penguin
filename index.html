@@ -127,6 +127,9 @@ no.addEventListener("click", () => {
   penguin.src = "1775256166094.png";
   penguin.classList.remove("angry");
 });
+if (window.location.search.includes("admin")) {
+  alert("😄: " + yesCount + " | 😠: " + noCount);
+}
 </script>
 
 </body>
