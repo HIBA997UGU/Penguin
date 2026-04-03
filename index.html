@@ -83,6 +83,8 @@
 <div id="message"></div>
 
 <script>
+let yesCount = localStorage.getItem("yesCount") || 0;
+let noCount = localStorage.getItem("noCount") || 0;
 let yes = document.getElementById("yes");
 let no = document.getElementById("no");
 let penguin = document.getElementById("penguin");
@@ -92,6 +94,8 @@ let noSize = 20;
 
 // 😄 YES → يهرب + penguin كيتعصب
 function moveYes() {
+  yesCount++;
+localStorage.setItem("yesCount", yesCount);
   let x = Math.random() * (window.innerWidth - 100);
   let y = Math.random() * 180;
 
@@ -110,6 +114,8 @@ yes.addEventListener("mouseover", moveYes);
 yes.addEventListener("touchstart", moveYes);
 
 // 😠 NO → message خاصو يبان
+noCount++;
+localStorage.setItem("noCount", noCount);
 no.addEventListener("click", () => {
   message.textContent = "كنت عارفة كاينة غير أنا 😌";
   message.style.display = "block";
